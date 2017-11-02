@@ -846,7 +846,7 @@ identity2 = function(x, ...){
 #' labels_row = c("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", 
 #' "", "", "Il10", "Il15", "Il1b")
 #' 
-#' pheatmap(test, annotation_col = annotation_col, labels_row = labels_row)
+#' pheatmap(test, annotation_col = annotation_col, labels_row = labels_row, fontface_row="italic")
 #' 
 #' # Specifying clustering from distance matrix
 #' drows = dist(test, method = "minkowski")
