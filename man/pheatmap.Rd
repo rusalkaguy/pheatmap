@@ -20,9 +20,9 @@ pheatmap(mat, color = colorRampPalette(rev(brewer.pal(n = 7, name =
   fontsize = 10, fontsize_row = fontsize, fontsize_col = fontsize,
   fontface_row = "plain", display_numbers = F, number_format = "\%.2f",
   number_color = "grey30", fontsize_number = 0.8 * fontsize,
-  gaps_row = NULL, gaps_col = NULL, labels_row = NULL,
-  labels_col = NULL, filename = NA, width = NA, height = NA,
-  silent = FALSE, na_col = "#DDDDDD", ...)
+  gaps_row = NULL, gap_row_size = 4, gaps_col = NULL, gap_col_size = 4,
+  labels_row = NULL, labels_col = NULL, filename = NA, width = NA,
+  height = NA, silent = FALSE, na_col = "#DDDDDD", ...)
 }
 \arguments{
 \item{mat}{numeric matrix of the values to be plotted.}
@@ -143,7 +143,11 @@ notation (see more in \code{\link{sprintf}}).}
 heatmap. Used only if the rows are not clustered. See \code{cutree_row}
 to see how to introduce gaps to clustered rows.}
 
+\item{gap_row_size}{width of gaps to introduce, in "bigpts" units (Default: 4)}
+
 \item{gaps_col}{similar to gaps_row, but for columns.}
+
+\item{gap_col_size}{width of gaps to introduce, in "bigpts" units (Default: 4)}
 
 \item{labels_row}{custom labels for rows that are used instead of rownames.}
 
@@ -245,8 +249,9 @@ pheatmap(test, annotation_col = annotation_col, annotation_colors = ann_colors[2
 
 # Gaps in heatmaps
 pheatmap(test, annotation_col = annotation_col, cluster_rows = FALSE, gaps_row = c(10, 14))
-pheatmap(test, annotation_col = annotation_col, cluster_rows = FALSE, gaps_row = c(10, 14), 
-         cutree_col = 2)
+pheatmap(test, annotation_col = annotation_col, cluster_rows = FALSE, 
+         gaps_row = c(10, 14), gap_row_size=10,
+         cutree_col = 2, gap_col_size=20 )
 
 # Show custom strings as row/col names
 labels_row = c("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", 
