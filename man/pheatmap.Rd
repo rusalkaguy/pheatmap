@@ -12,17 +12,17 @@ pheatmap(mat, color = colorRampPalette(rev(brewer.pal(n = 7, name =
   clustering_callback = identity2, cutree_rows = NA, cutree_cols = NA,
   treeheight_row = ifelse((class(cluster_rows) == "hclust") || cluster_rows,
   50, 0), treeheight_col = ifelse((class(cluster_cols) == "hclust") ||
-  cluster_cols, 50, 0), legend = TRUE, legend_breaks = NA,
-  legend_labels = NA, annotation_row = NA, annotation_col = NA,
-  annotation = NA, annotation_colors = NA, annotation_legend = TRUE,
-  annotation_names_row = TRUE, annotation_names_col = TRUE,
-  drop_levels = TRUE, show_rownames = T, show_colnames = T, main = NA,
-  fontsize = 10, fontsize_row = fontsize, fontsize_col = fontsize,
-  fontface_row = "plain", display_numbers = F, number_format = "\%.2f",
-  number_color = "grey30", fontsize_number = 0.8 * fontsize,
-  gaps_row = NULL, gap_row_size = 4, gaps_col = NULL, gap_col_size = 4,
-  labels_row = NULL, labels_col = NULL, filename = NA, width = NA,
-  height = NA, silent = FALSE, na_col = "#DDDDDD", ...)
+  cluster_cols, 50, 0), legend = TRUE, legend_horz = FALSE,
+  legend_breaks = NA, legend_labels = NA, annotation_row = NA,
+  annotation_col = NA, annotation = NA, annotation_colors = NA,
+  annotation_legend = TRUE, annotation_names_row = TRUE,
+  annotation_names_col = TRUE, drop_levels = TRUE, show_rownames = T,
+  show_colnames = T, main = NA, fontsize = 10, fontsize_row = fontsize,
+  fontsize_col = fontsize, fontface_row = "plain", display_numbers = F,
+  number_format = "\%.2f", number_color = "grey30", fontsize_number = 0.8
+  * fontsize, gaps_row = NULL, gap_row_size = 4, gaps_col = NULL,
+  gap_col_size = 4, labels_row = NULL, labels_col = NULL, filename = NA,
+  width = NA, height = NA, silent = FALSE, na_col = "#DDDDDD", ...)
 }
 \arguments{
 \item{mat}{numeric matrix of the values to be plotted.}
@@ -82,6 +82,8 @@ Default value 50 points.}
 Default value 50 points.}
 
 \item{legend}{logical to determine if legend should be drawn or not.}
+
+\item{legend_horz}{logical to use a horizontal legend at bottom of plot (Default: FALSE)}
 
 \item{legend_breaks}{vector of breakpoints for the legend.}
 
