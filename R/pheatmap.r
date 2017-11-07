@@ -41,7 +41,7 @@ lo = function(rown, coln, nrow, ncol, cellheight = NA, cellwidth = NA, treeheigh
     horz_legend_height = unit(0, "bigpts")
     if(!is.na2(legend)){
         if( legend_horz ) {
-            break_label_height = unit(1.1, "grobheight", textGrob(as.character(names(legend))[1], gp = do.call(gpar, gp)))
+            break_label_height = unit(1.2, "grobheight", textGrob(as.character(names(legend))[1], gp = do.call(gpar, gp)))
             horz_legend_height = unit(12,"bigpts") + break_label_height
         } else {
             longest_break = which.max(nchar(names(legend)))
@@ -258,7 +258,7 @@ draw_legend = function(color, breaks, legend, legend_horz, ...){
     if(legend_horz) {
         # horizontal legend bar with text to underneath
         gp = list(...)
-        break_label_height = unit(1.1, "grobheight", textGrob(as.character(names(legend))[1], gp = do.call(gpar, gp)))
+        break_label_height = unit(1.2, "grobheight", textGrob(as.character(names(legend))[1], gp = do.call(gpar, gp)))
                 
         rect = rectGrob(x = breaks[-length(breaks)], y = unit(5, "bigpts")+break_label_height, width = break_lengths, height = unit(10, "bigpts"), hjust = 0, vjust = 0, gp = gpar(fill = color, col = "#FFFFFF00"))
         text = textGrob(names(legend), x = legend_pos, y = unit(5, "bigpts"), vjust=0, hjust =0.5, gp = gpar(...))
