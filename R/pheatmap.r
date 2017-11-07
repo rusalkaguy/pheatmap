@@ -63,8 +63,9 @@ lo = function(rown, coln, nrow, ncol, cellheight = NA, cellwidth = NA, treeheigh
         annot_col_height = ncol(annotation_col) * (textheight + unit(2, "bigpts")) + unit(2, "bigpts")
         
         # Width of the correponding legend
+        text_height = unit(1, "grobheight", textGrob("FGH", gp = gpar(...)))
         t = c(as.vector(as.matrix(annotation_col)), colnames(annotation_col)) 
-        annot_col_legend_width = unit(1.2, "grobwidth", textGrob(t[which.max(nchar(t))], gp = gpar(...))) + unit(12, "bigpts")
+        annot_col_legend_width = unit(1.2, "grobwidth", textGrob(t[which.max(nchar(t))], gp = gpar(...))) + 2*text_height
         if(!annotation_legend){
             annot_col_legend_width = unit(0, "npc")
         }
@@ -80,8 +81,9 @@ lo = function(rown, coln, nrow, ncol, cellheight = NA, cellwidth = NA, treeheigh
         annot_row_width = ncol(annotation_row) * (textheight + unit(2, "bigpts")) + unit(2, "bigpts")
         
         # Width of the correponding legend
+        text_height = unit(1, "grobheight", textGrob("FGH", gp = gpar(...)))
         t = c(as.vector(as.matrix(annotation_row)), colnames(annotation_row)) 
-        annot_row_legend_width = unit(1.2, "grobwidth", textGrob(t[which.max(nchar(t))], gp = gpar(...))) + unit(12, "bigpts")
+        annot_row_legend_width = unit(1.2, "grobwidth", textGrob(t[which.max(nchar(t))], gp = gpar(...))) + 2*text_height
         if(!annotation_legend){
             annot_row_legend_width = unit(0, "npc")
         }
