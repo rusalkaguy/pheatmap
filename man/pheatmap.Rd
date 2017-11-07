@@ -207,6 +207,7 @@ pheatmap(test, scale = "row", clustering_distance_rows = "correlation")
 pheatmap(test, color = colorRampPalette(c("navy", "white", "firebrick3"))(50))
 pheatmap(test, cluster_row = FALSE)
 pheatmap(test, legend = FALSE)
+pheatmap(test, legend_horz = TRUE)
 
 # Show text within cells
 pheatmap(test, display_numbers = TRUE)
